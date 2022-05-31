@@ -223,7 +223,6 @@ npm run serve
 - Убрана поддержка КриптоПРО ЭЦП browser plug-in версий ниже 2.0
 - Доработана обработка ошибок, выбрасываемых из Крипто ПРО
 - При написании кода будут работать автодополнения и подсказки
-- Исправлена [проблема](https://github.com/vgoma/crypto-pro/issues/11) работы библиотеки с UglifyJs
 - Методы API доступны напрямую:
 
 В версии 1:
@@ -242,12 +241,6 @@ import { getSystemInfo } from 'crypto-pro';
 
 getSystemInfo();
 ```
-
-<a name="developers"></a>
-# Тем, кто хочет помочь
-Буду благодарен за расширение/улучшение/доработку API.
-Вам будут полезны [примеры](http://cpdn.cryptopro.ru/?url=/content/cades/plugin-samples-sign.html),
-предоставляемые Крипто ПРО.
 
 <a name="dev-mode"></a>
 ## Запуск режима разработки
@@ -482,10 +475,10 @@ MIT
 [npm-version-image]: http://img.shields.io/npm/v/crypto-pro.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/crypto-pro.svg?style=flat
 [downloads-url]: https://npmcharts.com/compare/crypto-pro?minimal=true
-[travis-url]: https://travis-ci.org/vgoma/crypto-pro
+<!-- [travis-url]: https://travis-ci.org/vgoma/crypto-pro
 [travis-image]: http://img.shields.io/travis/vgoma/crypto-pro/master.svg?style=flat
 [coveralls-image]: https://coveralls.io/repos/github/vgoma/crypto-pro/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/vgoma/crypto-pro?branch=master
+[coveralls-url]: https://coveralls.io/github/vgoma/crypto-pro?branch=master -->
 [donate-image]: https://img.shields.io/badge/%D1%81%D0%BF%D0%B0%D1%81%D0%B8%D0%B1%D0%BE-%E2%82%BD-yellow
 [donate-url]: https://money.yandex.ru/to/410011609769902
 [examples-image]: https://img.shields.io/badge/examples-folder-pink
