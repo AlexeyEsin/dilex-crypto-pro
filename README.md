@@ -14,10 +14,6 @@
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | __v45+__ с расширением [CryptoPro Extension for CAdES Browser Plug-in](https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog?utm_source=chrome-app-launcher-info-dialog) | __v43+__. Начиная с версии 52, с [расширением](https://www.cryptopro.ru/sites/default/files/products/cades/extensions/cryptopro_extension_for_cades_browser_plug_in-1.1.1-an+fx-windows.xpi) | __v9+__ с установленным [КриптоПро ЭЦП Browser plug-in](https://www.cryptopro.ru/products/cades/plugin)                                                                                                        | __v40+__ с расширением [CryptoPro Extension for CAdES Browser Plug-in](https://addons.opera.com/en/extensions/details/cryptopro-extension-for-cades-browser-plug-in/) |
 
-[![demo.gif](resources/demo.gif)](#example-script-tag)
-[![gosuslugi-demo-result.png](resources/gosuslugi-demo-result.png)](#example-script-tag)
-[![gosuslugi-signature-types.png](resources/gosuslugi-signature-types.png)](#example-script-tag)
-
 - [cryptoPro](#cryptopro)
     - [Зачем мне этот пакет?](#why)
     - [Установка](#install)
@@ -61,22 +57,12 @@
 ## Установка
 Для NPM:
 ```bash
-npm install crypto-pro
-```
-
-Для Yarn:
-```bash
-yarn add crypto-pro
-```
-
-Для Bower:
-```bash
-bower install crypto-pro
+npm install dilex-crypto-pro
 ```
 
 Подключение пакета как UMD модуля через тэг script:
 ```html
-<script src="crypto-pro/dist/crypto-pro.min.js"></script>
+<script src="dilex-crypto-pro/dist/crypto-pro.min.js"></script>
 <script>
 window.cryptoPro.getUserCertificates()
   .then(function (certificates) {
@@ -90,7 +76,7 @@ window.cryptoPro.getUserCertificates()
 
 Подключение пакета как ES модуля с Typescript или JavaScript:
 ```typescript
-import { getUserCertificates, Certificate } from 'crypto-pro';
+import { getUserCertificates, Certificate } from 'dilex-crypto-pro';
 
 (async () => {
   let certificates: Certificate[];
@@ -242,6 +228,12 @@ import { getSystemInfo } from 'crypto-pro';
 getSystemInfo();
 ```
 
+<a name="developers"></a>
+# Тем, кто хочет помочь
+Буду благодарен за расширение/улучшение/доработку API.
+Вам будут полезны [примеры](http://cpdn.cryptopro.ru/?url=/content/cades/plugin-samples-sign.html),
+предоставляемые Крипто ПРО.
+
 <a name="dev-mode"></a>
 ## Запуск режима разработки
 Устанавливаем зависимости:
@@ -264,7 +256,7 @@ npm i
 npm link ../../
 npm start
 ```
-> После выполнения `npm link ../../` в директории `examples/script-tag/node_modules` папка `crypto-pro` станет ярлыком,
+> После выполнения `npm link ../../` в директории `examples/script-tag/node_modules` папка `dilex-crypto-pro` станет ярлыком,
 > указывающим на папку содержащую локально собранный пакет.
 
 <a name="tests-execution"></a>
@@ -471,14 +463,14 @@ ldd libnpcades.so
 # Лицензия
 MIT
 
-[npm-url]: https://npmjs.org/package/crypto-pro
+[npm-url]: https://npmjs.org/package/dilex-crypto-pro
 [npm-version-image]: http://img.shields.io/npm/v/crypto-pro.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/crypto-pro.svg?style=flat
 [downloads-url]: https://npmcharts.com/compare/crypto-pro?minimal=true
-<!-- [travis-url]: https://travis-ci.org/vgoma/crypto-pro
+[travis-url]: https://travis-ci.org/vgoma/crypto-pro
 [travis-image]: http://img.shields.io/travis/vgoma/crypto-pro/master.svg?style=flat
 [coveralls-image]: https://coveralls.io/repos/github/vgoma/crypto-pro/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/vgoma/crypto-pro?branch=master -->
+[coveralls-url]: https://coveralls.io/github/vgoma/crypto-pro?branch=master
 [donate-image]: https://img.shields.io/badge/%D1%81%D0%BF%D0%B0%D1%81%D0%B8%D0%B1%D0%BE-%E2%82%BD-yellow
 [donate-url]: https://money.yandex.ru/to/410011609769902
 [examples-image]: https://img.shields.io/badge/examples-folder-pink
