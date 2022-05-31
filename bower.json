@@ -1,9 +1,9 @@
 {
-  "name": "crypto-pro",
-  "description": "API для взаимодействия с КриптоПро",
+  "name": "dilex-crypto-pro",
+  "description": "API для взаимодействия платформы Дилекс с КриптоПро",
   "main": "./lib/crypto-pro.js",
   "authors": [
-    "vgoma <vgoma@yandex.ru>"
+    "Alexey Yesin <esin.alexeyy@gmail.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -11,10 +11,12 @@
     "cryptopro",
     "crypto-pro",
     "cades",
+    "Dilex",
     "КриптоПро",
-    "Крипто ПРО"
+    "Крипто ПРО",
+    "Дилекс"
   ],
-  "homepage": "https://github.com/vgoma/crypto-pro",
+  "homepage": "https://github.com/AlexeyEsin/dilex-crypto-pro",
   "ignore": [
     "**/.*",
     "/*.js",
