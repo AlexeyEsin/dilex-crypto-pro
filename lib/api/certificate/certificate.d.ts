@@ -19,4 +19,5 @@ export declare class Certificate {
     isValid(): Promise<boolean>;
     exportBase64(): Promise<string>;
     hasExtendedKeyUsage(oids: any): Promise<boolean>;
+    hasPrivateKey(): Promise<boolean>;
 }
