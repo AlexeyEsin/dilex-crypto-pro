@@ -16,7 +16,7 @@ export const exportBase64 = _afterPluginsLoaded(function (): string {
       let base64: string;
 
       try {
-        base64 = __cadesAsyncToken__ + cadesCertificate.Export(0);
+        base64 = __cadesAsyncToken__ + cadesCertificate.Export(0); // 0 - CAPICOM_ENCODE_BASE64
       } catch (error) {
         console.error(error);
 
