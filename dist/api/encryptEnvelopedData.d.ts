@@ -6,4 +6,4 @@
  *
  * @returns зашифрованное сообщение
  */
-export declare const encryptMessage: (thumbprint: string, unencryptedMessage: string) => Promise<string>;
+export declare const encryptEnvelopedData: (thumbprint: string, unencryptedMessage: string) => Promise<string>;

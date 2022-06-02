@@ -1,6 +1,6 @@
 {
   "name": "dilex-crypto-pro",
-  "version": "2.3.0",
+  "version": "2.3.2",
   "description": "API для взаимодействия платформы Дилекс с КриптоПро",
   "main": "./lib/crypto-pro.js",
   "types": "./lib/crypto-pro.d.ts",
