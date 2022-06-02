@@ -8,7 +8,7 @@ import { getExtendedKeyUsage } from './getExtendedKeyUsage';
 import { getInfo } from './getInfo';
 import { hasExtendedKeyUsage } from './hasExtendedKeyUsage';
 import { isValid } from './isValid';
-import { hasPrivateKey } from './hasPrivateKey'
+import { hasPrivateKey } from './hasPrivateKey';
 
 export type CadesCertificate = any;
 
@@ -59,8 +59,7 @@ export class Certificate {
     return hasExtendedKeyUsage.call(this, oids);
   }
 
-  public hasPrivateKey(): Promise<boolean>{
+  public hasPrivateKey(): Promise<boolean> {
     return hasPrivateKey.call(this);
   }
-
 }

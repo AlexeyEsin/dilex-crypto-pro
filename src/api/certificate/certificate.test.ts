@@ -8,6 +8,7 @@ import { getDecodedExtendedKeyUsage } from './getDecodedExtendedKeyUsage';
 import { getExtendedKeyUsage } from './getExtendedKeyUsage';
 import { getInfo } from './getInfo';
 import { hasExtendedKeyUsage } from './hasExtendedKeyUsage';
+import { hasPrivateKey } from './hasPrivateKey';
 import { isValid } from './isValid';
 import { Certificate } from './certificate';
 
@@ -23,6 +24,7 @@ jest.mock('./getExtendedKeyUsage', () => ({ getExtendedKeyUsage: jest.fn(() => '
 jest.mock('./getDecodedExtendedKeyUsage', () => ({
   getDecodedExtendedKeyUsage: jest.fn(() => 'getDecodedExtendedKeyUsage'),
 }));
+jest.mock('./hasPrivateKey.ts', () => ({ hasPrivateKey: jest.fn(() => 'hasPrivateKey') }));
 jest.mock('./hasExtendedKeyUsage', () => ({ hasExtendedKeyUsage: jest.fn(() => 'hasExtendedKeyUsage') }));
 
 beforeEach(() => {
@@ -34,6 +36,7 @@ beforeEach(() => {
   (getExtendedKeyUsage as jest.Mock).mockClear();
   (getDecodedExtendedKeyUsage as jest.Mock).mockClear();
   (hasExtendedKeyUsage as jest.Mock).mockClear();
+  (hasPrivateKey as jest.Mock).mockClear();
 });
 
 const certificate = new Certificate(
@@ -66,5 +69,7 @@ describe('getInfo', () => {
     expect(getDecodedExtendedKeyUsage).toHaveBeenCalledTimes(1);
     expect(certificate.hasExtendedKeyUsage(oidsMock)).toEqual('hasExtendedKeyUsage');
     expect(hasExtendedKeyUsage).toHaveBeenCalledWith(oidsMock);
+    expect(certificate.hasPrivateKey()).toEqual('hasPrivateKey');
+    expect(hasPrivateKey).toHaveBeenCalledTimes(1);
   });
 });

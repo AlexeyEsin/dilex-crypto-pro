@@ -3366,10 +3366,10 @@ exports.createXMLSignature = _afterPluginsLoaded_1._afterPluginsLoaded(function 
 
 /***/ }),
 
-/***/ "./api/decryptMessage.ts":
-/*!*******************************!*\
-  !*** ./api/decryptMessage.ts ***!
-  \*******************************/
+/***/ "./api/decryptEnvelopedData.ts":
+/*!*************************************!*\
+  !*** ./api/decryptEnvelopedData.ts ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3417,28 +3417,26 @@ var _extractMeaningfulErrorMessage_1 = __webpack_require__(/*! ../helpers/_extra
 var _generateCadesFn_1 = __webpack_require__(/*! ../helpers/_generateCadesFn */ "./helpers/_generateCadesFn.ts");
 /**
  *
- * @param encryptedMessage - сообщение для расшифрования
+ * @param envelopedData - Данные для расшифрования
  *
  * @returns расшифрованное собщение
  */
-exports.decryptMessage = _afterPluginsLoaded_1._afterPluginsLoaded(function (encryptedMessage) { return __awaiter(void 0, void 0, void 0, function () {
+exports.decryptEnvelopedData = _afterPluginsLoaded_1._afterPluginsLoaded(function (envelopedData) { return __awaiter(void 0, void 0, void 0, function () {
     var cadesplugin;
     return __generator(this, function (_a) {
         cadesplugin = window.cadesplugin;
-        return [2 /*return*/, eval(_generateCadesFn_1._generateCadesFn(function decryptMessage() {
+        return [2 /*return*/, eval(_generateCadesFn_1._generateCadesFn(function decryptEnvelopedData() {
                 var decryptedMessage;
-                var cadesRecepients;
                 var cadesEnvelopedData = _generateCadesFn_1.__cadesAsyncToken__ + _generateCadesFn_1.__createCadesPluginObject__('CAdESCOM.CPEnvelopedData');
                 try {
-                    void (_generateCadesFn_1.__cadesAsyncToken__ +
-                        cadesEnvelopedData.propset_ContentEncoding(cadesplugin.CADESCOM_BASE64_TO_BINARY));
+                    void (_generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.propset_ContentEncoding(cadesplugin.CADESCOM_BASE64_TO_BINARY));
                 }
                 catch (error) {
                     console.error(error);
                     throw new Error(_extractMeaningfulErrorMessage_1._extractMeaningfulErrorMessage(error) || 'Ошибка при инициализации расшифрования');
                 }
                 try {
-                    void (_generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.Decrypt(encryptedMessage));
+                    void (_generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.Decrypt(envelopedData));
                     decryptedMessage = cadesEnvelopedData.Content;
                 }
                 catch (error) {
@@ -3453,10 +3451,10 @@ exports.decryptMessage = _afterPluginsLoaded_1._afterPluginsLoaded(function (enc
 
 /***/ }),
 
-/***/ "./api/encryptMessage.ts":
-/*!*******************************!*\
-  !*** ./api/encryptMessage.ts ***!
-  \*******************************/
+/***/ "./api/encryptEnvelopedData.ts":
+/*!*************************************!*\
+  !*** ./api/encryptEnvelopedData.ts ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3511,7 +3509,7 @@ var _getCadesCert_1 = __webpack_require__(/*! ../helpers/_getCadesCert */ "./hel
  *
  * @returns зашифрованное сообщение
  */
-exports.encryptMessage = _afterPluginsLoaded_1._afterPluginsLoaded(function (thumbprint, unencryptedMessage) { return __awaiter(void 0, void 0, void 0, function () {
+exports.encryptEnvelopedData = _afterPluginsLoaded_1._afterPluginsLoaded(function (thumbprint, unencryptedMessage) { return __awaiter(void 0, void 0, void 0, function () {
     var cadesplugin, cadesCertificate;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -3520,7 +3518,7 @@ exports.encryptMessage = _afterPluginsLoaded_1._afterPluginsLoaded(function (thu
                 return [4 /*yield*/, _getCadesCert_1._getCadesCert(thumbprint)];
             case 1:
                 cadesCertificate = _a.sent();
-                return [2 /*return*/, eval(_generateCadesFn_1._generateCadesFn(function encryptMessage() {
+                return [2 /*return*/, eval(_generateCadesFn_1._generateCadesFn(function encryptEnvelopedData() {
                         var encryptedMessage;
                         var messageBase64;
                         var cadesRecepients;
@@ -3533,8 +3531,7 @@ exports.encryptMessage = _afterPluginsLoaded_1._afterPluginsLoaded(function (thu
                             throw new Error(_extractMeaningfulErrorMessage_1._extractMeaningfulErrorMessage(error) || 'Ошибка при кодировании строки в base64');
                         }
                         try {
-                            void (_generateCadesFn_1.__cadesAsyncToken__ +
-                                cadesEnvelopedData.propset_ContentEncoding(cadesplugin.CADESCOM_BASE64_TO_BINARY));
+                            void (_generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.propset_ContentEncoding(cadesplugin.CADESCOM_BASE64_TO_BINARY));
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.propset_Content(messageBase64));
                             cadesRecepients = _generateCadesFn_1.__cadesAsyncToken__ + cadesEnvelopedData.Recipients;
                             cadesRecepients.Add(cadesCertificate);
@@ -3885,8 +3882,8 @@ __export(__webpack_require__(/*! ./createAttachedSignature */ "./api/createAttac
 __export(__webpack_require__(/*! ./createHash */ "./api/createHash.ts"));
 __export(__webpack_require__(/*! ./certificate */ "./api/certificate/index.ts"));
 __export(__webpack_require__(/*! ./execute */ "./api/execute.ts"));
-__export(__webpack_require__(/*! ./decryptMessage */ "./api/decryptMessage.ts"));
-__export(__webpack_require__(/*! ./encryptMessage */ "./api/encryptMessage.ts"));
+__export(__webpack_require__(/*! ./decryptEnvelopedData */ "./api/decryptEnvelopedData.ts"));
+__export(__webpack_require__(/*! ./encryptEnvelopedData */ "./api/encryptEnvelopedData.ts"));
 
 
 /***/ }),

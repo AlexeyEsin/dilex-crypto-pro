@@ -9,5 +9,5 @@ export * from './createAttachedSignature';
 export * from './createHash';
 export * from './certificate';
 export * from './execute';
-export * from './decryptMessage';
-export * from './encryptMessage';
+export * from './decryptEnvelopedData';
+export * from './encryptEnvelopedData';
